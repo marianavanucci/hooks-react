@@ -24,8 +24,9 @@ const UseState = (props) => {
             </div>
             <SectionTitle title='Exercicio #02'></SectionTitle>
             <input type="text" className="input" 
-          {/* value={name} onChange={e => console.log(e.target.value)}/> debug */}
+          /* value={name} onChange={e => console.log(e.target.value)}/> debug */
             value={name} onChange={e => setName(e.target.value)}/>
+            <span className="text">{name}</span>
         </div>
     )
 }
