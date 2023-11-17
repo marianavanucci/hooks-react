@@ -17,6 +17,15 @@ const UseMemo = (props) => {
                 title="Hook UseMemo"
                 subtitle="Retorna um valor memoizado!"
             />
+
+            <div className="center">
+                <input type="text" className="input"
+                value={n1} onChange={ e => setn1(parseInt(e.target.value))} />
+                <input type="text" className="input"
+                value={n2} onChange={ e => setn2(parseInt(e.target.value))} />
+                <input type="text" className="input"
+                value={n3} onChange={ e => setn3(parseInt(e.target.value))} />
+            </div>
         </div>
     )
 }
