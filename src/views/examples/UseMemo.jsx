@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 
+function sum(a, b) {
+    const future = Date.now() + 2000 //2segundos
+    while(Date.now() < future) {} // espera...
+    return a + b
+}
+
 const UseMemo = (props) => {
+    const [n1, setN1] = useState(0)
+    const [n2, setN2] = useState(0)
+    const [n3, setN3] = useState(0)
 
-    const [n1, setn1] = useState(0)
-    const [n2, setn2] = useState(0)
-    const [n3, setn3] = useState(0)
-
-    //comentario
+    const result = useMemo( () => sum(n1, n2), [n1, n2])
 
 
+    
 
     return (
         <div className="UseMemo">
@@ -20,11 +26,12 @@ const UseMemo = (props) => {
 
             <div className="center">
                 <input type="text" className="input"
-                value={n1} onChange={ e => setn1(parseInt(e.target.value))} />
+                value={n1} onChange={ e => setN1(parseInt(e.target.value))} />
                 <input type="text" className="input"
-                value={n2} onChange={ e => setn2(parseInt(e.target.value))} />
+                value={n2} onChange={ e => setN2(parseInt(e.target.value))} />
                 <input type="text" className="input"
-                value={n3} onChange={ e => setn3(parseInt(e.target.value))} />
+                value={n3} onChange={ e => setN3(parseInt(e.target.value))} />
+                <span className="text">{result}</span>
             </div>
         </div>
     )
