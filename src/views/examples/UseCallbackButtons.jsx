@@ -1,6 +1,7 @@
 import React from "react";
 
 const UseCallbackButons = props => {
+    console.log('render...')
 
     return (
         <div>
@@ -14,4 +15,4 @@ const UseCallbackButons = props => {
     )
 }
 
-export default UseCallbackButons
+export default React.memo(UseCallbackButons)
