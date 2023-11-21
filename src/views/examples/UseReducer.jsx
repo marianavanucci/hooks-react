@@ -1,24 +1,10 @@
 import React, { useReducer } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 
+import { inicialState, reducer } from '../../store/'
+import {numberAdd2} from '../../store/actions/number'
 
-const inicialState = {
-    cart: [],
-    products: [],
-    user: null,
-    number: 0
-}
 
-function reducer ( state, action) {
-    switch (action.type) {
-        case 'numberAdd2':
-            return {...state, number: state.number +2}
-        case 'login':
-            return{ ...state, user: { name: action.payload}}
-        default: 
-            return state
-    }
-}
 
 
 const UseReducer = (props) => {
@@ -42,7 +28,7 @@ const UseReducer = (props) => {
                     <button className="btn"
                     onClick={ ()=> dispatch({type: 'login', payload: 'Maria'})}>Login</button>
                     <button className="btn"
-                    onClick={ ()=> dispatch({type: 'numberAdd2'})}>+2</button>
+                    onClick={ ()=> numberAdd2(dispatch)}>+2</button>
                 </div>
             </div>
         </div>
