@@ -4,12 +4,4 @@ import React from "react";
 
 import App from "./views/App";
 
-import DataContext, { data } from "./data/DataContext";
-
-ReactDOM.render(
-  <DataContext.Provider value={data}>
-    <App />,
-  </DataContext.Provider>,
-
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
